@@ -4,7 +4,10 @@
     <svg
       ref="eye"
       class="eye"
-      :style="`transform: rotate(${rotationDegrees}deg)`"
+      :style="{
+        height: `${eyeHeightPx}px`,
+        transform: `rotate(${rotationDegrees}deg)`,
+      }"
       viewBox="0 0 33 33"
       fill="none"
     >
@@ -28,7 +31,7 @@
   </div>
 </template>
 <script>
-import { ref, defineComponent, onMounted, reactive } from "vue";
+import { ref, defineComponent, onMounted, reactive, toRefs } from "vue";
 import {
   debouncedWatch,
   throttledWatch,
@@ -37,7 +40,14 @@ import {
 } from "@vueuse/core";
 
 export default defineComponent({
-  setup() {
+  props: {
+    eyeHeightPx: {
+      type: Number,
+      default: 300,
+    },
+  },
+  setup(props) {
+    const { eyeHeightPx } = toRefs(props);
     const { x: mouseX, y: mouseY } = useMouse();
     const { width, height } = useWindowSize();
 
@@ -75,12 +85,9 @@ export default defineComponent({
       },
       { throttle: 1000 / 60 }
     );
-    return { eye, changeEyeColor, colors, rotationDegrees };
+    return { eye, eyeHeightPx, changeEyeColor, colors, rotationDegrees };
   },
 });
 </script>
 <style>
-.eye {
-  height: 300px;
-}
 </style>
