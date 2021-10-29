@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-import { ref, defineComponent, onMounted, reactive, toRefs } from "vue";
+import { ref, defineComponent, onMounted, reactive } from "vue";
 import {
   debouncedWatch,
   throttledWatch,
@@ -47,7 +47,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { eyeHeightPx } = toRefs(props);
     const { x: mouseX, y: mouseY } = useMouse();
     const { width, height } = useWindowSize();
 
@@ -85,7 +84,7 @@ export default defineComponent({
       },
       { throttle: 1000 / 60 }
     );
-    return { eye, eyeHeightPx, changeEyeColor, colors, rotationDegrees };
+    return { eye, changeEyeColor, colors, rotationDegrees };
   },
 });
 </script>
