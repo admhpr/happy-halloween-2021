@@ -10,7 +10,7 @@
     />
   </div>
   <div class="conatainer">
-    <Eye v-for="eye in eyeAmount" :key="eye" />
+    <Eye v-for="eye in Number(eyeAmount)" :key="eye" />
   </div>
 </template>
 
@@ -37,8 +37,9 @@ export default {
 .conatainer {
   background-color: black;
   min-height: 100vh;
-  width: 100%;
+  max-width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }

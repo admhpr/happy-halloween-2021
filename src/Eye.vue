@@ -43,7 +43,7 @@ export default defineComponent({
   props: {
     eyeHeightPx: {
       type: Number,
-      default: 150,
+      default: 100,
     },
   },
   setup(props) {
