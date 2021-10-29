@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="changeEyeColor">Click Me!</button>
     <svg
+      @click="changeEyeColor"
       ref="eye"
       class="eye"
       :style="{
@@ -43,7 +43,7 @@ export default defineComponent({
   props: {
     eyeHeightPx: {
       type: Number,
-      default: 350,
+      default: 150,
     },
   },
   setup(props) {

@@ -1,6 +1,16 @@
 <template>
+  <div class="controls">
+    <input
+      @input="onSliderInput"
+      v-model="eyeAmount"
+      type="range"
+      min="1"
+      max="100"
+      class="slider"
+    />
+  </div>
   <div class="conatainer">
-    <Eye />
+    <Eye v-for="eye in eyeAmount" :key="eye" />
   </div>
 </template>
 
@@ -9,6 +19,16 @@ import Eye from "./Eye.vue";
 export default {
   components: {
     Eye,
+  },
+  data() {
+    return {
+      eyeAmount: 1,
+    };
+  },
+  methods: {
+    onSliderInput(e) {
+      console.log(this.eyeAmount);
+    },
   },
 };
 </script>
