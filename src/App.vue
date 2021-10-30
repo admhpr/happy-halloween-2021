@@ -8,11 +8,11 @@
       max="100"
       class="slider"
     />
-          
-    <input type="color">
-    <input type="color">
+
+    <input type="color" />
+    <input type="color" />
   </div>
-  <div class="conatainer">
+  <div class="container">
     <Eye v-for="eye in Number(eyeAmount)" :key="eye" />
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-.conatainer {
+.container {
   background-color: black;
   min-height: 100vh;
   max-width: 100%;
