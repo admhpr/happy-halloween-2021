@@ -8,6 +8,9 @@
       max="100"
       class="slider"
     />
+          
+    <input type="color">
+    <input type="color">
   </div>
   <div class="conatainer">
     <Eye v-for="eye in Number(eyeAmount)" :key="eye" />
