@@ -8,9 +8,14 @@
       max="100"
       class="slider"
     />
-
-    <input type="color" v-model="irisColor" />
-    <input type="color" v-model="pupilColor" />
+    <span>
+      <input type="color" v-model="irisColor" name="iris" />
+      <label for="iris"> Iris </label>
+    </span>
+    <span>
+      <input type="color" v-model="pupilColor" name="pupil" />
+      <label for="pupil"> Pupil </label>
+    </span>
   </div>
   <div class="container">
     <Eye
