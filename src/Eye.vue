@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg
-      @click="changeEyeColor"
+      @click="onEyeClick"
       ref="eye"
       class="eye"
       :style="{
@@ -59,6 +59,10 @@ export default defineComponent({
     function changeEyeColor() {
       Object.assign(colors, { iris: "lightgreen", pupil: "darkgreen" });
     }
+
+    function onEyeClick() {
+      changeEyeColor();
+    }
     onMounted(() => {
       eyeLocation.value = eye.value.getBoundingClientRect();
     });
@@ -84,7 +88,7 @@ export default defineComponent({
       },
       { throttle: 1000 / 60 }
     );
-    return { eye, changeEyeColor, colors, rotationDegrees };
+    return { eye, colors, rotationDegrees, onEyeClick };
   },
 });
 </script>
