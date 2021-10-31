@@ -9,11 +9,15 @@
       class="slider"
     />
 
-    <input type="color" />
-    <input type="color" />
+    <input type="color" v-model="irisColor" />
+    <input type="color" v-model="pupilColor" />
   </div>
   <div class="container">
-    <Eye v-for="eye in Number(eyeAmount)" :key="eye" />
+    <Eye
+      v-for="eye in Number(eyeAmount)"
+      :key="eye"
+      v-bind="{ irisColor, pupilColor }"
+    />
   </div>
 </template>
 
@@ -26,6 +30,8 @@ export default {
   data() {
     return {
       eyeAmount: 1,
+      irisColor: "",
+      pupilColor: "",
     };
   },
   methods: {

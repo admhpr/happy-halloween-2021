@@ -45,6 +45,14 @@ export default defineComponent({
       type: Number,
       default: 100,
     },
+    irisColor: {
+      type: String,
+      default: "#2A0D3B",
+    },
+    pupilColor: {
+      type: String,
+      default: "#7860AA",
+    },
   },
   setup(props) {
     const { x: mouseX, y: mouseY } = useMouse();
@@ -54,7 +62,7 @@ export default defineComponent({
     const rotationDegrees = ref(0);
     const eyeLocation = ref(undefined);
 
-    let colors = reactive({ iris: "#7860AA", pupil: "#2A0D3B" });
+    let colors = reactive({ iris: props.irisColor, pupil: props.pupilColor });
 
     function changeEyeColor() {
       Object.assign(colors, { iris: "lightgreen", pupil: "darkgreen" });
