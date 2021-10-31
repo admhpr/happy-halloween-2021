@@ -30,8 +30,8 @@ export default {
   data() {
     return {
       eyeAmount: 1,
-      irisColor: "",
-      pupilColor: "",
+      irisColor: "#FFFFFF",
+      pupilColor: "#FFFFFF",
     };
   },
   methods: {
