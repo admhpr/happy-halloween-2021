@@ -40,9 +40,7 @@ export default {
     };
   },
   methods: {
-    onSliderInput(e) {
-      console.log(this.eyeAmount);
-    },
+    onSliderInput(e) {},
   },
 };
 </script>
