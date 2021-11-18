@@ -1,6 +1,6 @@
 ## Project setup
 
-![public/eyes-2021.gif](demo)
+![demo](public/eyes-2021.gif])
 
 ```
 yarn install
