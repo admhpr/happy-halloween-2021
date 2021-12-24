@@ -8,6 +8,9 @@
       max="100"
       class="slider"
     />
+    <button @click="onLessClick">Less -</button>
+    <button @click="onMoreClick">More +</button>
+
     <span>
       <input type="color" v-model="irisColor" name="iris" />
       <label for="iris"> Iris </label>
@@ -41,6 +44,16 @@ export default {
   },
   methods: {
     onSliderInput(e) {},
+    onMoreClick() {
+      if (this.eyeAmount < 100) {
+        this.eyeAmount += 1;
+      }
+    },
+    onLessClick() {
+      if (this.eyeAmount) {
+        this.eyeAmoutn -= 1;
+      }
+    },
   },
 };
 </script>
