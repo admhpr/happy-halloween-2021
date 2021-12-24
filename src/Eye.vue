@@ -59,7 +59,7 @@ export default defineComponent({
     const rotationDegrees = ref(0);
     const eyeLocation = ref(undefined);
 
-    let colors = reactive({ iris: props.irisColor, pupil: props.pupilColor });
+    let colors = reactive({ iris: "#FFFFFF", pupil: "#FFFFFF" });
 
     function changeEyeColor() {
       Object.assign(colors, { iris: props.irisColor, pupil: props.pupilColor });
