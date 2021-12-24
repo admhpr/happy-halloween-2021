@@ -50,8 +50,8 @@ export default {
       }
     },
     onLessClick() {
-      if (this.eyeAmount) {
-        this.eyeAmoutn -= 1;
+      if (this.eyeAmount > 0) {
+        this.eyeAmount -= 1;
       }
     },
   },
